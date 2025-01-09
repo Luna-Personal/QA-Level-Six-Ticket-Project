@@ -1,20 +1,21 @@
-#Importing packages
+# Importing packages
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_bcrypt import Bcrypt
-from flask_login import LoginManager
-from flask_migrate import Migrate
+from flask import SQLAlchemy
+from flask import Bcrypt
+from flask import LoginManager
+from flask import Migrate
 from config import Config
 
 
-#Setting up Variables
+# Setting up Variables
 db = SQLAlchemy()
 bcrypt = Bcrypt()
 login_manager = LoginManager()
 login_manager.login_view = 'login'
 migrate = Migrate()
 
-#Creating a function to create and configure the Flask App
+
+# Creating a function to create and configure the Flask App
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
