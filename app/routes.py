@@ -2,7 +2,7 @@ from flask import render_template, url_for, flash, redirect, request, Blueprint 
 from app import db, bcrypt  # Import db and bcrypt instances from the app package
 from app.forms import RegistrationForm, LoginForm, TicketForm  # Import forms from the forms module
 from app.models import User, Ticket  # Import models from the models module
-from flask import login_user, current_user, logout_user, login_required  # Import Flask-Login functions
+from flask_login import login_user, current_user, logout_user, login_required  # Import Flask-Login functions
 
 # Define the main blueprint
 main = Blueprint('main', __name__)
